@@ -1,0 +1,109 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" name="" id="input">
+    <button onclick="check()">search</button>
+    <script>
+    function check(){
+    let time = document.getElementById("input").value
+    if(time.includes("am")){
+       let put = time.split('a')[0];  
+      if(put >= 5 && put <= 12 ){
+          alert("Good Morning");
+      }else if(put +12 >= 9 && put -12 <=5 ){
+          alert("Good Night"); 
+        }
+    }else if(time.includes("pm")){
+         let put = Number(time.split('p')[0])+12
+         if(put  >=12 && put  <= 17) {
+          alert("Good AfterNoon"); 
+        }else if(put >= 17 && put<=21){
+alert("good Evening");
+        }else{
+         alert("Good Night");
+        }
+      }
+   }
+    </script>
+</body>
+</html> --><!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Document</title>
+<style>
+  body {
+    background-color: #282c34;
+    color: #f0f0f0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  #input {
+    padding: 10px 15px;
+    font-size: 16px;
+    border: 2px solid #61dafb;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    width: 200px;
+    color: #282c34;
+  }
+
+  button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #61dafb;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    color: #282c34;
+    font-weight: bold;
+  }
+
+  button:hover {
+    background-color: #21a1f1;
+  }
+</style>
+</head>
+<body>
+
+<input type="text" id="input" placeholder="Enter time (e.g. 7am)" />
+<button onclick="check()">Search</button>
+
+<script>
+function check(){
+    let time = document.getElementById("input").value.toLowerCase().trim();
+    if(time.includes("am")){
+       let put = parseInt(time.split('a')[0]);  
+      if(put >= 5 && put <= 12 ){
+          alert("Good Morning");
+      }else if(put >= 1 && put < 5 ){
+          alert("Good Night"); 
+        }
+    }else if(time.includes("pm")){
+         let put = parseInt(time.split('p')[0]) + 12;
+         if(put  >=12 && put  <= 17) {
+          alert("Good Afternoon"); 
+        }else if(put > 17 && put <= 21){
+          alert("Good Evening");
+        }else{
+         alert("Good Night");
+        }
+      } else {
+        alert("Please enter time with am or pm");
+      }
+   }
+</script>
+
+</body>
+</html>
